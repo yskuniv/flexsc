@@ -2,6 +2,9 @@ CC		= gcc
 CFLAGS		= -std=gnu99 -I .
 LDFLAGS		= -L .
 
+sample.out: sample.c libflexsc.a
+	$(CC) $(CFLAGS) $(LDFLAGS) $^ -o $@
+
 libflexsc.a: flexsc.o
 	$(AR) rcs $@ $^
 
