@@ -15,6 +15,9 @@ headers:
 	mkdir -p $(INCLUDE_DIR)/
 	cp $(SRC_DIR)/*.h $(INCLUDE_DIR)/ 2> /dev/null || :
 
+sample:
+	$(MAKE) -C src/ sample.out
+
 clean:
 	$(MAKE) -C $(SRC_DIR)/ clean
 	rm -rf $(LIB_DIR)/
