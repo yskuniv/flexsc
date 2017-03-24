@@ -17,4 +17,4 @@ libflexsc.so: flexsc.o
 flexsc.o: flexsc.c flexsc.h
 
 clean:
-	rm -rf *.{o,a,so}
+	rm -rf *.{o,a,so,out}
