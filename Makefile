@@ -1,3 +1,5 @@
+BUILD_TARGET    = flexsc
+
 SRC_DIR		= src
 LIB_DIR		= lib
 INCLUDE_DIR	= include
@@ -5,7 +7,7 @@ INCLUDE_DIR	= include
 default: libs headers
 
 libs:
-	$(MAKE) -C src/ libflexsc.{a,so}
+	$(MAKE) -C src/ lib$(BUILD_TARGET).{a,so}
 	mkdir -p $(LIB_DIR)/
 	cp $(SRC_DIR)/*.{a,so} $(LIB_DIR)/ 2> /dev/null || :
 
