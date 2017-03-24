@@ -18,6 +18,10 @@ headers:
 sample:
 	$(MAKE) -C src/ sample.out
 
+test:
+	$(MAKE) -C src/ test.out
+	./src/test.out
+
 clean:
 	$(MAKE) -C $(SRC_DIR)/ clean
 	rm -rf $(LIB_DIR)/

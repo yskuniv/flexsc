@@ -5,6 +5,9 @@ LDFLAGS		= -L .
 sample.out: sample.c libflexsc.a
 	$(CC) $(CFLAGS) $(LDFLAGS) $^ -o $@
 
+test.out: test.c libflexsc.a
+	$(CC) $(CFLAGS) $(LDFLAGS) $^ -o $@
+
 libflexsc.a: flexsc.o
 	$(AR) rcs $@ $^
 
