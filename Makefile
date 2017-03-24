@@ -7,7 +7,7 @@ INCLUDE_DIR	= include
 default: libs headers
 
 libs:
-	$(MAKE) -C src/ lib$(BUILD_TARGET).{a,so}
+	$(MAKE) -C $(SRC_DIR)/ lib$(BUILD_TARGET).{a,so}
 	mkdir -p $(LIB_DIR)/
 	cp $(SRC_DIR)/*.{a,so} $(LIB_DIR)/ 2> /dev/null || :
 
@@ -16,11 +16,11 @@ headers:
 	cp $(SRC_DIR)/*.h $(INCLUDE_DIR)/ 2> /dev/null || :
 
 sample:
-	$(MAKE) -C src/ sample.out
+	$(MAKE) -C $(SRC_DIR)/ sample.out
 
 test:
-	$(MAKE) -C src/ test.out
-	./src/test.out
+	$(MAKE) -C $(SRC_DIR)/ test.out
+	./$(SRC_DIR)/test.out
 
 clean:
 	$(MAKE) -C $(SRC_DIR)/ clean
